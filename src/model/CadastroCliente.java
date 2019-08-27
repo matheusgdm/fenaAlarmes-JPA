@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 @Entity
 public class CadastroCliente implements Serializable {
@@ -29,7 +29,7 @@ public class CadastroCliente implements Serializable {
     private String nascionalidade;
     @ManyToOne
     private Endereco endereco_cliente;
-    @OneToMany(mappedBy = "cadastrocliente")
+    @OneToMany(mappedBy = "cadastrocliente", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private List<Telefone> telefones = new ArrayList<>();
 
     public Endereco getEndereco_cliente() {

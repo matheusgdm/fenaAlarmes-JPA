@@ -5,15 +5,13 @@ package View;
 //import java.sql.SQLException;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.swing.JOptionPane;
 
 import model.CadastroCliente;
 //Codigo antigo!
 //import model.CompraAtual;
 import model.Telefone;
+import util.ConexaoBD;
 
 /**
  *
@@ -21,12 +19,8 @@ import model.Telefone;
  */
 public class CadastroNovoCliente extends javax.swing.JFrame {
 
-    static EntityManagerFactory emf = 
-                Persistence.createEntityManagerFactory("FenaAlarmesJPAPU");
-        
-       static EntityManager em = emf.createEntityManager();
-    
     CadastroCliente c = new CadastroCliente();
+    
     Telefone ct = new Telefone();
 //Codigo Antigo!
 //    CompraAtual ca = new CompraAtual();
@@ -311,9 +305,9 @@ public class CadastroNovoCliente extends javax.swing.JFrame {
             String nasc = painelNascionalidadeTelaCadastro.getText() != null || !painelNascionalidadeTelaCadastro.getText().isEmpty()  ? painelNascionalidadeTelaCadastro.getText(): "Brasil";
             c.setNascionalidade(nasc);
             //codigo novo!!
-            em.persist(c);
-            em.getTransaction().begin();
-            em.getTransaction().commit();
+            ConexaoBD.getEm().persist(c);
+            ConexaoBD.getEm().getTransaction().begin();
+            ConexaoBD.getEm().getTransaction().commit();
 
 // Codigo antigo
 //            ClienteRep eRep = new ClienteRep();
