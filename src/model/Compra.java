@@ -59,11 +59,7 @@ public class Compra implements Serializable {
 
     public void setProdutos(List<Produto> produtos) {
         this.produtos = produtos;
-    }
-
-    
-
-    
+    } 
 
     public CadastroCliente getCadastrocliente() {
         return cadastrocliente;

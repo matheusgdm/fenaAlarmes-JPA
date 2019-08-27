@@ -5,6 +5,8 @@ package View;
 //import java.sql.SQLException;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 import model.CadastroCliente;
@@ -20,8 +22,9 @@ import util.ConexaoBD;
 public class CadastroNovoCliente extends javax.swing.JFrame {
 
     CadastroCliente c = new CadastroCliente();
+    Telefone tel1 = new Telefone();
+    Telefone tel2 = new Telefone();
     
-    Telefone ct = new Telefone();
 //Codigo Antigo!
 //    CompraAtual ca = new CompraAtual();
 
@@ -292,15 +295,23 @@ public class CadastroNovoCliente extends javax.swing.JFrame {
             c.setSobrenome(painelSobrenomeTelaCadastro.getText());
             c.setEmail(painelEmailTelaCadastro.getText());
             try {
-            ct.setNumero_telefone(painelTelefone01TelaCadastro.getText());
+            tel1.setNumero_telefone(painelTelefone01TelaCadastro.getText());
+            tel1.setCadastrocliente(c);
             } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Telefone 01 não é válido!");
             }
             try {
-            ct.setNumero_telefone(painelTelefone02TelaCadastro.getText());    
+            tel2.setNumero_telefone(painelTelefone02TelaCadastro.getText());
+            tel2.setCadastrocliente(c);
             } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Telefone 02 não é válido!");
             }
+            //passando os telefones para uma lista e enviado para o banco
+            List<Telefone> telefones = new ArrayList<>();
+            telefones.add(tel1);
+            telefones.add(tel2);
+            c.setTelefones(telefones);
+            
             c.setSenha(painelSenhaTelaCadastro.getText());
             String nasc = painelNascionalidadeTelaCadastro.getText() != null || !painelNascionalidadeTelaCadastro.getText().isEmpty()  ? painelNascionalidadeTelaCadastro.getText(): "Brasil";
             c.setNascionalidade(nasc);
