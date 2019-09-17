@@ -333,15 +333,14 @@ public class CadastroNovoCliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Cadastro realizado com sucesso!!");
             this.setVisible(false); 
             //Codigo antigo!
-            //new TelaInicial().setVisible(true);
+            new TelaInicial().setVisible(true);
         }
         
     }//GEN-LAST:event_btnSalvarCadastroActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         this.setVisible(false); 
-//Codigo antigo!
-//        new TelaInicial().setVisible(true);
+        new TelaInicial().setVisible(true);
     }//GEN-LAST:event_button1ActionPerformed
 
     /**
