@@ -31,7 +31,6 @@ public class MeusDados extends javax.swing.JFrame {
         txtNomeCliente.setText("Nome: ".concat(this.clienteLogado.getNome() + " " +  this.clienteLogado.getSobrenome()));
         txtEmailCliente.setText("Email: " + this.clienteLogado.getEmail());
         txtNascionalidadeCliente.setText("Nascionalidade: " + this.clienteLogado.getNascionalidade());
-        txtTelefonesCliente.setText("Telefones: " + this.clienteLogado.getTelefones());
         
 
 //        txtTotalDSC.setText(String.valueOf("Quantidade: " + c.getContadorCentralDSC()));
@@ -104,7 +103,7 @@ public class MeusDados extends javax.swing.JFrame {
                                 .addGap(81, 81, 81)
                                 .addComponent(jLabel12))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(346, 346, 346)
+                        .addGap(366, 366, 366)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(230, Short.MAX_VALUE))
         );
@@ -121,9 +120,9 @@ public class MeusDados extends javax.swing.JFrame {
                 .addComponent(txtNascionalidadeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(txtTelefonesCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(92, 92, 92))
+                .addGap(107, 107, 107))
         );
 
         pack();
